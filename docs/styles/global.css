@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro');
+
+*
+{
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    font-family: "Crimson Pro",sans-serif;
+    line-height: 1.5;
+}
+
+img, span, .material-symbols-outlined
+{
+    /* Para o usuario não selecionar*/
+    -webkit-user-select:none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+/* ----- ----- Base: ----- ----- */
+main
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    max-width: 1400px;
+    margin: 2em auto;
+    padding: 1em;
+    gap: 4em;
+}
+
+section
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.banner-image-index
+{
+    height: 30vh;
+    max-height: 300px;
+}
+
+img
+{
+    object-fit: cover;
+    border-radius: 0px 0px 16px 16px;
+    box-shadow: 2px 2px 4px #5558;
+}
+
+h1, h2
+{
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px solid #141414;
+    letter-spacing: 1px;
+    width: fit-content;
+    font-style: italic;
+}
+
+h1
+{
+    font-size: 36px;
+}
+
+footer
+{
+    display: flex;
+    background-color: #141414;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+    padding: 20px;
+    width: 100%;
+}
+
+/* ----- ----- ScrollBar: ----- ----- */
+::-webkit-scrollbar 
+{
+    height: 1em;
+    width: 1em;
+}
+
+::-webkit-scrollbar-track 
+{
+    background: #141414;
+}
+   
+::-webkit-scrollbar-thumb 
+{
+    background: #333; 
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #555; 
+}

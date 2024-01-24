@@ -1,0 +1,223 @@
+@import url("styles/global.css");
+@import url("styles/dark_theme.css");
+
+.menu-button
+{
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+
+
+/* ----- ----- Menu superior: ----- ----- */
+#Menu
+{
+    background-color: #141414;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 20px;
+    gap: 1em;
+
+    position: sticky;
+    transition: .15s;
+    top: 0;
+}
+
+#Logo
+{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+}
+
+#Menu-itens
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+#Menu-itens a
+{
+    color: #fff;
+}
+
+
+
+
+
+/**/
+
+#Form-churrasco
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    box-shadow: 0px 0px 0px 2px #141414;
+    background-color: #f1f1f120;
+    border: 2px dashed #141414;
+    border-radius: 8px;
+    min-width: 270px;
+    padding: 2em;
+    margin: auto;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form div
+{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    gap: 1em;
+    /* width: 100%; */
+}
+
+form label
+{
+    font-weight: bold;
+}
+
+form input
+{
+    max-width: 65px;
+    padding: .5em;
+}
+
+/* ----- ----- Table: ----- ----- */
+.table-container
+{
+    display: block;
+    border-radius: 8px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+table
+{
+    border-radius: 4px;
+    border-collapse: collapse;
+}
+
+table th, table tr, table td
+{
+    border: 2px solid #444;
+    padding: 0em .75em;
+    text-align: left;
+}
+
+table th
+{
+    /* font-family: 'Playfair Display', serif; */
+    background-color: #141414;
+    letter-spacing: 1px;
+    padding: 1em 2em;
+    color: #f5f5f5;
+}
+
+table td
+{
+    text-align: center;
+}
+
+table tbody tr:nth-child(even)
+{
+    background-color: #4442;
+}
+
+/* table buttons*/
+table .edit, table .delete
+{
+    background-color: transparent;
+    border-radius: 50%;
+    padding: .5em;
+    margin: .25em;
+    border: none;
+}
+
+table .edit
+{
+    border: 4px solid #FFC066 ;
+    color: #372100;
+}
+
+table .delete
+{
+    border: 4px solid #FF5C5C;
+    color: #210000;
+}
+
+table .delete:hover 
+{
+    background-color: #FF5C5C;
+    color: #210000;
+    cursor: pointer;
+}
+
+table .edit:hover
+{
+    background-color: #FFC066;
+    color: #372100;
+    cursor: pointer;
+}
+
+#Table-section table
+{
+    margin: auto;
+}
+
+#Table-section h2
+{
+    font-size: 32px;
+}
+
+.table-actions
+{
+    /* display: flex; */
+}
+
+.novoChurrasco-button
+{
+    border: 2px dashed #141414;
+    background-color: #f1f1f140;
+    border-radius: 48px;
+    font-weight: bold;
+    color: #141414;
+    padding: 1em 2em;
+}
+
+.novoChurrasco-button:hover
+{
+    background-color: #1f1f1f40;
+}
+
+input[type="number"]
+{
+    border: 2px dashed #141414;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+

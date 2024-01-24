@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <title>Churracômetro</title>
+</head>
+<body>
+    <header id="Menu">
+        <a id="Logo" href="#"><span class="material-symbols-outlined">restaurant</span>Churracômetro</a>
+        <ul id="Menu-itens">
+            <li class="menu-button material-symbols-outlined"><a href="pages/churrasco.html">add_circle</a></li>
+            <li class="menu-button material-symbols-outlined" onclick="theme()">contrast</li>
+        </ul>
+    </header>
+    <img class="banner-image-index" src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1931&auto=format" alt="Imagem de uma carne assada" height="300px" width="100%" loading="lazy">
+    <main>
+        <section>
+            <h1>Churracômetro:</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nisi architecto ex, fuga assumenda dolorum, sed harum excepturi molestiae aliquid pariatur nulla commodi magni repellat ipsum tempore a aliquam vel?</p>
+            <a class="novoChurrasco-button" href="pages/churrasco.html">Novo Churrasco</a>
+        </section>
+        <section id="Table-section">
+            <h2>Histórico:</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Qtd. de Pessoas</th>
+                            <th>Carne (KG)</th>
+                            <th>Pão de Alho</th>
+                            <th>Carvão (KG)</th>
+                            <th>Refri (L)</th>
+                            <th>Cerveja (L)</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="churrascoData">
+                        <!-- Os dados serão preenchido através do JavaScript -->
+                        <tr>
+                            <td>2024-01-22</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td class="table-actions">
+                                <button class="edit material-symbols-outlined" onclick="editChurrasco(1)">edit</button>
+                                <button class="delete material-symbols-outlined" onclick="deleteChurrasco(1)">delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-22</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td class="table-actions">
+                                <button class="edit material-symbols-outlined" onclick="editChurrasco(1)">edit</button>
+                                <button class="delete material-symbols-outlined" onclick="deleteChurrasco(1)">delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-22</td>
+                            <td>10</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td class="table-actions">
+                                <button class="edit material-symbols-outlined" onclick="editChurrasco(1)">edit</button>
+                                <button class="delete material-symbols-outlined" onclick="deleteChurrasco(1)">delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <h2>Sobre o Projeto:</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed recusandae necessitatibus error exercitationem illo, doloribus similique saepe expedita praesentium alias commodi ab dicta, numquam perferendis minima a vel ratione ipsa!
+            Dolores, fugit nulla eligendi accusantium ipsam consectetur dignissimos dicta deserunt reprehenderit, labore distinctio id, obcaecati ea. Necessitatibus modi magni fuga iste fugiat totam, voluptatum eveniet animi eum atque temporibus eaque.
+            Consequatur laboriosam eum quos unde eveniet itaque aliquid ipsum? Tenetur dolores deleniti aliquid placeat voluptatum amet accusantium ab iste dicta delectus, dolorem, cupiditate nostrum. Voluptates sed error sequi rerum blanditiis!</p>
+        </section>
+    </main>
+    <footer>
+        <p>Churrascometro - Projeto de Estudos - 2024</p>
+    </footer>    
+</body>
+</html>
