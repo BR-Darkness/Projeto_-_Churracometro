@@ -22,24 +22,24 @@
     <img class="banner-image-index" src="https://images.unsplash.com/photo-1526213174737-acd9757c6bf3?q=80&w=1974&auto=format" alt="Imagem de uma grelha no fogo" height="300px" width="100%" loading="lazy">
     <main>
         <section>
-            <h1>Churracômetro:</h1>
-            <div id="Form-churrasco">
+            <h1>Churrascômetro:</h1>
+            <div id="Form-churrasco" class="card">
                 <h2>Bem-vindo(a):</h2>
                 <form action="">
                     <div>
                         <label for="qtdCriancas">Quantidade de Crianças:</label>
-                        <input id="qtdCriancas" type="number" min="0" max="100">
+                        <input id="qtdCriancas" type="number" min="0" max="100" required>
                     </div>
                     <div>
                         <label for="qtdHomens">Quantidade de Homens:</label>
-                        <input id="qtdHomens" type="number" min="0" max="100">
+                        <input id="qtdHomens" type="number" min="0" max="100" required>
                     </div>
                     <div>
                         <label for="qtdMulheres">Quantidade de Mulheres:</label>
-                        <input id="qtdMulheres" type="number" min="0" max="100">
+                        <input id="qtdMulheres" type="number" min="0" max="100" required>
                     </div>
                 </form>
-                <a href="#" class="novoChurrasco-button">Calcular Churrasco</a>
+                <a href="#" class="novoChurrasco-button" onclick="novoChurrasco()">Calcular Churrasco</a>
             </div>
         </section>
         <section>
