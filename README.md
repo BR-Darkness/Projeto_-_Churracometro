@@ -39,6 +39,19 @@
 - O código deve fazer uso da API JSON (json-server)
 - O código deve fazer uso de chamadas assíncronas e seus derivados.
 
+## 📦 Tecnologias Usadas:
+
+* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+* ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+* ![JSON Server](https://img.shields.io/badge/JSON%20Server-000000?style=for-the-badge&logo=json&logoColor=white)
+* ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+
+
+
+
 ## 👷 Autores
 - <a href='https://github.com/Raphaell-Alves'>Raphael Moura</a>
 - <a href='https://github.com/LucasDev9645'>Lucas Freitas</a>
