@@ -14,14 +14,14 @@
     border-bottom: 2px solid #f5f5f5;
 }
 
-.dark-theme .novoChurrasco-button
+.dark-theme .custom-button
 {
     border: 2px dashed #f5f5f5;
     background-color: #1f1f1f40;
     color: #f5f5f5;
 }
 
-.dark-theme .novoChurrasco-button:hover
+.dark-theme .custom-button:hover
 {
     background-color: #f1f1f140;
 }
@@ -38,7 +38,7 @@
     color: #f5f5f5;
 }
 
-.dark-theme #Form-churrasco
+.dark-theme .card
 {
     border: 2px dashed #f5f5f5;
     box-shadow: 0px 0px 0px 2px #f5f5f5;

@@ -182,34 +182,28 @@ table .edit:hover
     cursor: pointer;
 }
 
-#Table-section table
+/* ----- ----- Buttons: ----- ----- */
+.custom-button
 {
-    margin: auto;
-}
-
-#Table-section h2
-{
-    font-size: 32px;
-}
-
-.table-actions
-{
-    /* display: flex; */
-}
-
-.novoChurrasco-button
-{
+    font-family: "Crimson Pro", serif;
     border: 2px dashed #141414;
     background-color: #f1f1f140;
     border-radius: 48px;
     font-weight: bold;
     color: #141414;
     padding: 1em 2em;
+    font-size: 16px;
 }
 
-.novoChurrasco-button:hover
+.custom-button:hover
 {
     background-color: #1f1f1f40;
+}
+
+input[type="submit"]
+{
+    margin-top: 1em;
+    max-width: 100%;
 }
 
 input[type="number"]
