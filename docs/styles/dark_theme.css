@@ -51,3 +51,8 @@
     background-color: #141414;
     color: #f5f5f5;
 }
+
+.dark-theme a
+{
+    color: #56ddee;
+}
