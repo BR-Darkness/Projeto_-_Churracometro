@@ -14,6 +14,7 @@ async function fetchListaChurrascos() {
                 <td>${churrasco.refri_l} L</td>
                 <td>${churrasco.cerveja_l} L</td>
                 <td>
+                    <button class="edit material-symbols-outlined" onclick="ModalEditarChurrasco('${churrasco.id}')">edit</button>
                     <button class="delete material-symbols-outlined" onclick="deletarChurrasco('${churrasco.id}')">delete</button>
                 </td>`;
             tbody.appendChild(row);

@@ -56,3 +56,8 @@
 {
     color: #56ddee;
 }
+
+.dark-theme #Modal .card
+{
+    background-color: #1e2021;
+}

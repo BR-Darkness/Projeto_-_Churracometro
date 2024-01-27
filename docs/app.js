@@ -13,9 +13,11 @@ window.onscroll = () => {
     prevScrollpos = currentScrollPos;
 }
 
-if (localStorage.getItem("theme") === "dark") document.body.classList.toggle("dark-theme");
-
-/* ----- ----- ----- ----- ----- */
+function closeModal()
+{
+    let modal = document.getElementById("Modal")
+    modal.remove();
+}
 
 function obterDataAtualFormatada() {
     let dataAtual = new Date();
@@ -51,8 +53,8 @@ function calcularChurrasco() {
         pao_de_alho:    (qtd_homens * 2 + qtd_mulheres * 2 + qtd_criancas * 1),
         refri_l:        (qtd_pessoas <= 5) ? 2 : Math.ceil(qtd_pessoas / 5),
         cerveja_l:      ((qtd_homens * 3 + qtd_mulheres * 3 + qtd_criancas * 0) * 0.6).toFixed(1).replace(".", ",") 
-        }
-    
+    }
+
     return dadosChurrasco;
 }
 
@@ -69,13 +71,14 @@ async function criarChurrasco() {
     } catch (error) {
         console.warn('Erro ao subir dados para à API.');
         console.error('Erro ao subir dados para à API:', error);
+        createOfflineCard(calcularChurrasco());
     }
 }
 
 async function deletarChurrasco(id) {
     try {
-        await fetch(`http://localhost:3000/churrascos/${id}`, {
-            method: 'DELETE',
+        await fetch(`http://localhost:3000/churrascos/${id}`, { 
+            method: 'DELETE', 
         });
     } catch (error) {
         console.warn('Erro ao deletar churrasco.')
@@ -96,4 +99,55 @@ async function atualizarChurrasco(id) {
         console.warn('Erro ao buscar dados do churrasco, por favor verifique se à ID solicitada esta correta.')
         console.error('Erro ao buscar dados do churrasco', error);
    }
+}
+
+async function ModalEditarChurrasco(id) {   
+    const response  = await fetch(`http://localhost:3000/churrascos/${id}`);
+    const churrasco = await response.json();
+    let modal = document.createElement("div")
+
+    modal.innerHTML = `
+    <div id="Modal">
+        <div class="card">
+            <button onclick="closeModal()" class="material-symbols-outlined">close</button>
+            <h2>Editar Churrasco:</h2>
+            <form onsubmit="atualizarChurrasco('${id}'); return false">
+                <div>
+                    <label for="qtd_Criancas">Quantidade de Crianças:</label>
+                    <input id="qtd_Criancas" type="number" min="0" max="100" value="${churrasco.qtd_criancas}" required>
+                </div>
+                <div>
+                    <label for="qtd_Homens">Quantidade de Homens:</label>
+                    <input id="qtd_Homens" type="number" min="0" max="100" value="${churrasco.qtd_homens}" required>
+                </div>
+                <div>
+                    <label for="qtd_Mulheres">Quantidade de Mulheres:</label>
+                    <input id="qtd_Mulheres" type="number" min="0" max="100" value="${churrasco.qtd_mulheres}" required>
+                </div>
+                <input type="submit" href="#" class="custom-button" value="Salvar Churrasco">
+            </form>
+        </div>
+    </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+/* ----- ----- Offline (API não hospedada): ----- ----- */
+function createOfflineCard(data) {
+    const card = document.createElement('div');
+    card.innerHTML =
+        `<section>
+            <h2>Resultados:</h2>
+            <div class="card">
+                <h3>Data: ${data.data}</h3>
+                <p>Qtd. de Pessoas: ${data.qtd_homens + data.qtd_mulheres + data.qtd_criancas}</p>
+                <p>Carne (KG): ${data.carne_kg} Kg</p>
+                <p>Pão de Alho: ${data.pao_de_alho}</p>
+                <p>Carvão (KG): ${data.carvao_kg} Kg</p>
+                <p>Refri (L): ${data.refri_l} L</p>
+                <p>Cerveja (L): ${data.cerveja_l} L</p>
+            </div>
+        </section>
+        `;
+    document.getElementById('Resultado').append(card);
 }

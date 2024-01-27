@@ -201,4 +201,22 @@ input[type="number"]
     font-weight: bold;
 }
 
+/* ----- ----- Modal: ----- ----- */
+#Modal
+{
+    background-color: #141414ee;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Modal .card
+{
+    background-color: #f5f5f5;
+}
