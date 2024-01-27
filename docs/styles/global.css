@@ -89,6 +89,20 @@ footer
     width: 100%;
 }
 
+.to-top-button
+{
+    box-shadow: 0 0 0 2px #141414;
+    border: 2px dashed #fff;
+    background-color: #141414;
+    border-radius: 50%;
+    color: #fff;
+    position: fixed;
+    padding: .25em;
+    margin: .5em;
+    bottom: 0;
+    right: 0;
+}
+
 /* ----- ----- ScrollBar: ----- ----- */
 ::-webkit-scrollbar 
 {

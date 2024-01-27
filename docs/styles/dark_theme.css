@@ -43,3 +43,11 @@
     border: 2px dashed #f5f5f5;
     box-shadow: 0px 0px 0px 2px #f5f5f5;
 }
+
+.dark-theme .to-top-button
+{
+    box-shadow: 0 0 0 2px #141414;
+    border: 2px dashed #f5f5f5;
+    background-color: #141414;
+    color: #f5f5f5;
+}
