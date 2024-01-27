@@ -134,20 +134,20 @@ async function ModalEditarChurrasco(id) {
 
 /* ----- ----- Offline (API não hospedada): ----- ----- */
 function createOfflineCard(data) {
-    const card = document.createElement('div');
-    card.innerHTML =
-        `<section>
-            <h2>Resultados:</h2>
-            <div class="card">
-                <h3>Data: ${data.data}</h3>
-                <p>Qtd. de Pessoas: ${data.qtd_homens + data.qtd_mulheres + data.qtd_criancas}</p>
-                <p>Carne (KG): ${data.carne_kg} Kg</p>
-                <p>Pão de Alho: ${data.pao_de_alho}</p>
-                <p>Carvão (KG): ${data.carvao_kg} Kg</p>
-                <p>Refri (L): ${data.refri_l} L</p>
-                <p>Cerveja (L): ${data.cerveja_l} L</p>
-            </div>
-        </section>
-        `;
-    document.getElementById('Resultado').append(card);
+    let a = ''; 
+    a +=
+    `<div class="card">
+        <h2>Resultado:</h2>
+        <div>
+            <h3>Data: ${data.data}</h3>
+            <p>Qtd. de Pessoas: ${data.qtd_homens + data.qtd_mulheres + data.qtd_criancas}</p>
+            <p>Carne (KG): ${data.carne_kg} Kg</p>
+            <p>Pão de Alho: ${data.pao_de_alho}</p>
+            <p>Carvão (KG): ${data.carvao_kg} Kg</p>
+            <p>Refri (L): ${data.refri_l} L</p>
+            <p>Cerveja (L): ${data.cerveja_l} L</p>
+        </div>
+    </div>
+    `;
+    document.getElementById('Resultado').innerHTML = a;
 }
