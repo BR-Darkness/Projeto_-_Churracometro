@@ -71,7 +71,7 @@ async function criarChurrasco() {
     } catch (error) {
         console.warn('Erro ao subir dados para à API.');
         console.error('Erro ao subir dados para à API:', error);
-        createOfflineCard(calcularChurrasco());
+        createOfflineResultsCard(calcularChurrasco());
     }
 }
 
@@ -133,21 +133,39 @@ async function ModalEditarChurrasco(id) {
 }
 
 /* ----- ----- Offline (API não hospedada): ----- ----- */
-function createOfflineCard(data) {
-    let a = ''; 
-    a +=
-    `<div class="card">
+function createOfflineResultsCard(data) {
+    let card = ''; 
+    card +=
+    `<div id="result-card" class="card">
         <h2>Resultado:</h2>
-        <div>
-            <h3>Data: ${data.data}</h3>
-            <p>Qtd. de Pessoas: ${data.qtd_homens + data.qtd_mulheres + data.qtd_criancas}</p>
-            <p>Carne (KG): ${data.carne_kg} Kg</p>
-            <p>Pão de Alho: ${data.pao_de_alho}</p>
-            <p>Carvão (KG): ${data.carvao_kg} Kg</p>
-            <p>Refri (L): ${data.refri_l} L</p>
-            <p>Cerveja (L): ${data.cerveja_l} L</p>
+        <div class="result-info">
+            <div>
+                <p>Qtd. de Pessoa(s): </p>
+                <b>${data.qtd_homens + data.qtd_mulheres + data.qtd_criancas}</b>
+            </div>
+            <div>
+                <p>Carne (KG): </p>
+                <b>${data.carne_kg} Kg</b>
+            </div>
+            <div>
+                <p>Pão de Alho: </p>
+                <b>${data.pao_de_alho} Un</b>
+            </div>
+            <div>
+                <p>Carvão (KG): </p>
+                <b>${data.carvao_kg} Kg</b>
+            </div>
+            <div>
+                <p>Refri (L): </p>
+                <b>${data.refri_l} L</b>
+            </div>
+            <div>
+                <p>Cerveja (L): </p>
+                <b>${data.cerveja_l} L</b>
+            </div>
         </div>
     </div>
     `;
-    document.getElementById('Resultado').innerHTML = a;
+    document.getElementById('Resultado').innerHTML = card;
+    window.location.href = "#Resultado";
 }

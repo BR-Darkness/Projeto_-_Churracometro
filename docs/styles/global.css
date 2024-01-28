@@ -12,6 +12,7 @@
 
 html
 {
+    scroll-padding-top: 100px;
     scroll-behavior: smooth;
 }
 
@@ -155,6 +156,11 @@ a
         height: 20vh;
         max-height: 200px;
     }
+    
+    h1
+    {
+        font-size: 32px;
+    }
 
     h2, h3
     {
@@ -177,5 +183,10 @@ a
     #Menu
     {
         justify-content: space-around !important;
+    }
+
+    .card
+    {
+        padding: 1em !important;
     }
 }

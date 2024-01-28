@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 
-/* ----- ----- Card: ----- ----- */
+/* ----- ----- Cards: ----- ----- */
 .card
 {
     display: flex;
@@ -63,6 +63,19 @@
     border-radius: 8px;
     padding: 2em;
     margin: auto;
+}
+
+#result-card
+{
+    max-width: 340px;
+}
+
+.result-info div
+{
+    justify-content: space-between;
+    min-width: min(276px, 100%);
+    display: inline-flex;
+    align-items: center;
 }
 
 /* ----- ----- Form Novo Churrasco: ----- ----- */
