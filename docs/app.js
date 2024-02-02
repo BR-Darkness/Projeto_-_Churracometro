@@ -1,11 +1,12 @@
-function theme()
-{
+/* ----- ----- Tema: ----- ----- */
+function theme() {
     document.body.classList.toggle("dark-theme");
     (localStorage.getItem("theme") === "dark") ? localStorage.setItem("theme", "light") : localStorage.setItem("theme", "dark");
 }
 
 if (localStorage.getItem("theme") === "dark") document.body.classList.toggle("dark-theme");
 
+/* ----- ----- Menu: ----- ----- */
 let prevScrollpos = window.scrollY;
 window.onscroll = () => {
     let currentScrollPos = window.scrollY;
@@ -13,8 +14,8 @@ window.onscroll = () => {
     prevScrollpos = currentScrollPos;
 }
 
-function closeModal()
-{
+/* ----- ----- Fechar Modal: ----- ----- */
+function closeModal() {
     let modal = document.getElementById("Modal")
     modal.remove();
 }
@@ -29,19 +30,16 @@ function obterDataAtualFormatada() {
 }
 
 /* ----- ----- Funções Churrasco: ----- ----- */
-
 function calcularChurrasco() {
     let qtdCriancasElement  = document.getElementById("qtd_Criancas");
     let qtdMulheresElement  = document.getElementById("qtd_Mulheres");
     let qtdHomensElement    = document.getElementById("qtd_Homens");
+    let qtd_criancas        = Number(qtdCriancasElement.value);
+    let qtd_mulheres        = Number(qtdMulheresElement.value);
+    let qtd_homens          = Number(qtdHomensElement.value);
+    let qtd_pessoas         = qtd_homens + qtd_mulheres + qtd_criancas;
 
-    let qtd_criancas  = Number(qtdCriancasElement.value);
-    let qtd_mulheres  = Number(qtdMulheresElement.value);
-    let qtd_homens    = Number(qtdHomensElement.value);
-
-    let qtd_pessoas   = qtd_homens + qtd_mulheres + qtd_criancas;
-
-    if (qtd_pessoas == 0) return false;
+    if (qtd_pessoas <= 0) return false;
 
     const dadosChurrasco = {
         data:           obterDataAtualFormatada(),
@@ -54,24 +52,22 @@ function calcularChurrasco() {
         refri_l:        (qtd_pessoas <= 5) ? 2 : Math.ceil(qtd_pessoas / 5),
         cerveja_l:      ((qtd_homens * 3 + qtd_mulheres * 3 + qtd_criancas * 0) * 0.6).toFixed(1).replace(".", ",") 
     }
-
     return dadosChurrasco;
 }
 
 async function criarChurrasco() {
-
-    if (calcularChurrasco() == false) return;
-
+    const dadosChurrasco = calcularChurrasco();
+    if (!dadosChurrasco) return;
     try {
         await fetch('http://localhost:3000/churrascos/', {
             method: 'POST',
-            body: JSON.stringify(calcularChurrasco())
+            body: JSON.stringify(dadosChurrasco)
         });
         window.location.href = "../index.html";
     } catch (error) {
         console.warn('Erro ao subir dados para à API.');
         console.error('Erro ao subir dados para à API:', error);
-        createOfflineResultsCard(calcularChurrasco());
+        createOfflineResultsCard(dadosChurrasco);
     }
 }
 
@@ -87,13 +83,12 @@ async function deletarChurrasco(id) {
 }
 
 async function atualizarChurrasco(id) {
-    
-    if (calcularChurrasco() == false) return;
-
+    const dadosChurrasco = calcularChurrasco();
+    if (!dadosChurrasco) return;
    try {
         await fetch(`http://localhost:3000/churrascos/${id}`, {
             method: 'PUT',
-            body: JSON.stringify(calcularChurrasco())
+            body: JSON.stringify(dadosChurrasco)
         });
    } catch (error) {
         console.warn('Erro ao buscar dados do churrasco, por favor verifique se à ID solicitada esta correta.')
@@ -102,16 +97,16 @@ async function atualizarChurrasco(id) {
 }
 
 async function ModalEditarChurrasco(id) {   
-    const response  = await fetch(`http://localhost:3000/churrascos/${id}`);
-    const churrasco = await response.json();
-    let modal = document.createElement("div")
+    const response      = await fetch(`http://localhost:3000/churrascos/${id}`);
+    const churrasco     = await response.json();
+    let modal           = document.createElement("div")
 
     modal.innerHTML = `
     <div id="Modal">
         <div class="card">
             <button onclick="closeModal()" class="material-symbols-outlined">close</button>
             <h2>Editar Churrasco:</h2>
-            <form onsubmit="atualizarChurrasco('${id}'); return false">
+            <form onsubmit="atualizarChurrasco('${id}');">
                 <div>
                     <label for="qtd_Criancas">Quantidade de Crianças:</label>
                     <input id="qtd_Criancas" type="number" min="0" max="100" value="${churrasco.qtd_criancas}" required>

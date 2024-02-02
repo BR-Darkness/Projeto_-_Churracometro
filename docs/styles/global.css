@@ -18,7 +18,7 @@ html
 
 body
 {
-    font-family: "Crimson Pro",sans-serif;
+    font-family: "Crimson Pro", sans-serif;
     line-height: 1.6;
     font-size: 18px;
 }
@@ -61,8 +61,9 @@ section p
 
 .banner-image
 {
-    height: 30vh;
     max-height: 300px;
+    height: 30vh;
+    width: 100%;
 }
 
 img
